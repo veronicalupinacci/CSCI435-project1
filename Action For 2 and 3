@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+
+void terminate_process(int pid) {
+    if (kill(pid, SIGKILL) == 0) {
+        printf("Process with PID %d terminated.\n", pid);
+    } else {
+        perror("Error while terminating process");
+    }
+}
+
+void print_active_processes() {
+    printf("Active Processes:\n");
+    system("ps -eo pid");
+}
+
+int main() {
+    int choice;
+    pid_t pid;
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Exit\n");
+        printf("2. Terminate a process\n");
+        printf("3. Print active processes\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                return 0;
+            case 2:
+                printf("Enter PID of the process to terminate: ");
+                scanf("%d", &pid);
+                terminate_process(pid);
+                break;
+            case 3:
+                print_active_processes();
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
