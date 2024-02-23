@@ -32,12 +32,10 @@ int main()
 		if(choice < 1){
 			//
 			printf("Invalid choice. Please try again.\n");
-			scanf("%d", &choice);
 		}
 		else if(choice  > 4){
 			//
 			printf("Invalid choice. Please try again.\n");
-			scanf("%d", &choice);
 		}
 		else if(choice == 1){
 			//create a new process
@@ -62,7 +60,6 @@ int main()
 		else{
 			//
 			printf("Invalid choice. Please try again.\n");
-			scanf("%d", &choice);
 		}
 		
 	}
