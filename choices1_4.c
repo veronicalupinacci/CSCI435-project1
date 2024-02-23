@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <signal.h>
+#include <stdlib.h>
 
 void create_process() {
     int pid = fork();
