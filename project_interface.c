@@ -3,6 +3,7 @@
  * The program, once executed, should print user interface with 4 choices and let user interact by entering an integer.
  * Each number (1-4) triggers a unique action. After completing the action, the program displays the same menu again.
  * CSCI435
+ * Author: Rebekah Watrous
  */
 
 #include <stdio.h>
